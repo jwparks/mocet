@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: mocet
+Version: 0.0.1
+Summary: Python package for head-motion corrected eye-tracking
+Author-email: Jiwoong Park <jiwoongpark@mensakorea.org>
+Project-URL: Homepage, https://github.com/jwpark/mocet
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
