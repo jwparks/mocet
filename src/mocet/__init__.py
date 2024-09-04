@@ -72,7 +72,7 @@ def apply_mocet(pupil_data, motion_params_fname,
         dedrift_regressor[:, i] = reg.predict(X)
     pupil_data = pupil_data[:, :2] - dedrift_regressor
     if return_weights:
-        return pupil_data, coefs_
+        return pupil_data, coefs_, dedrift_regressor
     else:
         return pupil_data
 
