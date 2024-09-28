@@ -50,8 +50,9 @@ def get_avotec_history(fname, encoding='cp949'):
     return time_between_rec_and_start, video_duration, time_last_TTL
 
 
-def clean_avotec_data(log_fname, data_fname, start, duration,
-                       end=None, eye_closed_threshold=0.75, encoding='cp949'):
+def clean_avotec_data(log_fname, data_fname, start, duration, end=None,
+                      eye_closed_threshold=0.75, encoding='cp949',
+                      remove_spike=True, spike_threhold_z=3.0, spike_window=1000):
     log_data = pd.read_csv(log_fname)
     log_data = log_data[["center_x", "center_y", "confidence", "diameter_px"]]
     pupil_data_array = log_data.to_numpy()[:, :2]
@@ -117,5 +118,22 @@ def clean_avotec_data(log_fname, data_fname, start, duration,
             pupil_confidence_clean = pupil_confidence_array[pupil_effective]
             pupil_diameter_clean = pupil_diameter_array[pupil_effective]
 
-
+    if remove_spike:
+        for i in range(2):
+            for t in range(len(pupil_data_clean) - 1):
+                start_idx = max(t - spike_window // 2, 0)
+                end_idx = min(t + spike_window // 2, len(pupil_data_clean))
+                local_mean = np.mean(pupil_data_clean[start_idx:end_idx, i])
+                local_std = np.std(pupil_data_clean[start_idx:end_idx, i])
+                if np.logical_or(pupil_data_clean[t+1, i] < (local_mean - spike_threhold_z * local_std),
+                                 pupil_data_clean[t+1, i] > (local_mean + spike_threhold_z * local_std)):
+                    pupil_data_clean[t + 1, i] = pupil_data_clean[t, i]
+        for t in range(len(pupil_diameter_clean) - 1):
+            start_idx = max(t - spike_window // 2, 0)
+            end_idx = min(t + spike_window // 2, len(pupil_data_clean))
+            local_mean = np.mean(pupil_diameter_clean[start_idx:end_idx])
+            local_std = np.std(pupil_diameter_clean[start_idx:end_idx])
+            if np.logical_or(pupil_diameter_clean[t+1] < (local_mean - spike_threhold_z * local_std),
+                             pupil_diameter_clean[t+1] > (local_mean + spike_threhold_z * local_std)):
+                pupil_diameter_clean[t + 1] = pupil_diameter_clean[t]
     return pupil_data_clean, pupil_timestamps_clean, pupil_confidence_clean, pupil_diameter_clean
