@@ -1,5 +1,5 @@
 # Motion-corrected eyetracking (MoCET)
-Park, J., Jeon, J. Y., Kim, R., Kay, K. & Shim, W. M. Motion-corrected eye tracking (MoCET) improves gaze accuracy during visual fMRI experiments. bioRxiv (2025) doi:10.1101/2025.03.13.642919.
+This repository contains the code for the paper  "Park, J., Jeon, J. Y., Kim, R., Kay, K. & Shim, W. M. Motion-corrected eye tracking (MoCET) improves gaze accuracy during visual fMRI experiments. bioRxiv (2025) doi:10.1101/2025.03.13.642919" 
 
 The **MoCET (Motion-Corrected Eye-Tracking)** Python package provides tools for compensating head movement-induced errors in eye-tracking data collected during fMRI experiments. This package integrates motion correction techniques with advanced eye-tracking algorithms to enhance gaze accuracy, particularly in dynamic environments where head movement is common.
 
@@ -141,6 +141,17 @@ motion_params = motion_params - motion_params[0, :]
 displacement = mocet.simulation.generate(motion_params, camera_parameters, 'path/to/output/', index=0, render=True)
 ```
 For more detailed information on how to use the simulation tools, please refer to the `analysis/Figure_2/generate_model_simulation.ipynb` notebook.
+
+### Key dependencies:
+- Python 3.11.4
+- NumPy (`numpy==1.25.2`)
+- SciPy (`scipy==1.11.2`)
+- pandas (`pandas==2.2.3`)
+- scikit-learn (`scikit-learn==1.3.0`)
+- statsmodels (`statsmodels==0.14.4`)
+- gstreamer (`gstreamer==1.14.1`)
+- matplotlib (`matplotlib==3.7.1`)
+- seaborn (`seaborn==0.12.2`)
 
 ### References
 - Park, J., Jeon, J. Y., Kim, R., Kay, K. & Shim, W. M. Motion-corrected eye tracking (MoCET) improves gaze accuracy during visual fMRI experiments. bioRxiv 2025.03.13.642919 doi:10.1101/2025.03.13.642919.
