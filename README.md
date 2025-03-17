@@ -2,7 +2,7 @@
 This repository contains the code for the paper  "Park, J., Jeon, J. Y., Kim, R., Kay, K. & Shim, W. M. Motion-corrected eye tracking (MoCET) improves gaze accuracy during visual fMRI experiments. bioRxiv (2025) doi:10.1101/2025.03.13.642919" 
 
 The **MoCET (Motion-Corrected Eye-Tracking)** Python package provides tools for compensating head movement-induced errors in eye-tracking data collected during fMRI experiments. This package integrates motion correction techniques with advanced eye-tracking algorithms to enhance gaze accuracy, particularly in dynamic environments where head movement is common.
-
+ 
 ### Key Features:
 - **Head Motion Compensation**: Implements a robust algorithm that leverages head motion parameters from fMRI data preprocessing to correct gaze position errors caused by head movements.
 - **Simulation Support**: Includes tools for simulating head motion and its impact on eye-tracking data, enabling validation and testing of the correction algorithms.
