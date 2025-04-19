@@ -99,8 +99,8 @@ data_fname = f'{subject}_{session}_{task}_{run}_recording-eyetracking_physio_dat
 history_fname = f'{subject}_{session}_{task}_{run}_recording-eyetracking_physio_his.txt'
 task_duration = 816  # in seconds
 
-start, _, _ = mocet.get_avotec_history(history_fname)
-pupil_data, pupil_timestamps, pupil_confidence, _ = mocet.clean_avotec_data(log_fname,
+start, _, _ = mocet.utils.get_avotec_history(history_fname)
+pupil_data, pupil_timestamps, pupil_confidence, _ = mocet.utils.clean_avotec_data(log_fname,
                                                                              data_fname,
                                                                              start=start,
                                                                              duration=task_duration)
