@@ -29,7 +29,7 @@ pip install mocet
 - However, for seemless integration with python and MoCET, we recommend OpenCV and [eyerec-python](https://github.com/tcsantini/eyerec-python) for pupil extraction via the command line.
 - For example eye video data to test pupil extraction, please refer to this [link](https://drive.google.com/file/d/1Q8PsecMtoM5hY7cPPaA7pmVjM_eyMRnr/view?usp=sharing).
   - Note that the full raw eye video file exceeds 16GB for a ~13-minute run, so we provide a trimmed version (1GB, 60s) for demonstration purposes.
-  - [In the data repository](10.5281/zenodo.17089244), we provide all files necessary for replicating the study.
+  - [In the data repository](https://zenodo.org/records/17089244), we provide all files necessary for replicating the study.
   - Due to storage limitations, the raw eye video files (totaling over 1.8TB) are not included. Please contact us if you require access to the raw video data.
 
 Example code for installing eyerec-python (Thanks Royoung!), but you may need some troubleshooting to install the C++ library. For more details, please refer to the [eyerec-python](https://github.com/tcsantini/eyerec-python) documentation.
