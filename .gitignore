@@ -1,0 +1,17 @@
+/analysis/data/behavioral_eyetracking/
+/analysis/data/contrastgrid/
+/analysis/data/corrected/
+/analysis/data/corrected_eyetracking/
+/analysis/data/cross_alignment/
+/analysis/data/DeepMReye/
+/analysis/data/error/
+/analysis/data/eyetracking/
+/analysis/data/ROIs/
+/analysis/data/simulation/
+/analysis/data/simulation_null/
+/analysis/data/visual_field_mapping/
+/analysis/data/all_data_list.pkl
+/analysis/data/README.md
+/analysis/data/unusable_data_list.pkl
+/analysis/data/usable_data_list.pkl
+/analysis/data/valid_data_list.pkl
